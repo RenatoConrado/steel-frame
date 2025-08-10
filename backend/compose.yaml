@@ -1,0 +1,28 @@
+services:
+  postgres:
+    image: postgres:17.5
+    container_name: courses-database
+    environment:
+      POSTGRES_DB: courses
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD?:error}
+    ports:
+      - '5432:5432'
+    networks:
+      - course-network
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d courses"]
+      interval: 10s
+      retries: 5
+      start_period: 30s
+      timeout: 10s
+
+networks:
+  course-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
