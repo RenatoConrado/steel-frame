@@ -24,4 +24,4 @@ hs_err_pid*
 replay_pid*
 
 # Secrets
-db_password.txt
+backend/src/main/resources/sql/populate.sql

@@ -1,4 +1,4 @@
-package io.github.renatoconrado.steel_frame.auth.internal;
+package io.github.renatoconrado.steel_frame.config.auth.user;
 
 import io.github.renatoconrado.steel_frame.clients.UserService;
 import lombok.RequiredArgsConstructor;

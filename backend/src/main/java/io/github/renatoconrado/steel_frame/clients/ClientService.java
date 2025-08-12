@@ -20,4 +20,8 @@ public class ClientService {
     public Optional<Client> getClientByClientId(String id) {
         return this.clientRepository.getClientByClientId(id);
     }
+
+    public void save(Client client) {
+        this.clientRepository.save(client);
+    }
 }

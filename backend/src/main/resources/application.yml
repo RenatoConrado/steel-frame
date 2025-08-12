@@ -24,7 +24,10 @@ spring:
             registration:
               client-id: "public-client"
               client-authentication-methods: "none"
-              authorization-grant-types: "authorization_code"
+              authorization-grant-types:
+              - "authorization_code"
+              - "refresh_token"
+              - "client_credentials"
               redirect-uris: "http://localhost:4200"
               scopes:
                 - "openid"

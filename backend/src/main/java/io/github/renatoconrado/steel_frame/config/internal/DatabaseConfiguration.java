@@ -1,4 +1,4 @@
-package io.github.renatoconrado.steel_frame;
+package io.github.renatoconrado.steel_frame.config.internal;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;

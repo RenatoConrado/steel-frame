@@ -11,9 +11,17 @@ INSERT INTO roles(name) VALUES ('USER'), ('ADMIN');
 CREATE TABLE clients (
     id            uuid PRIMARY KEY DEFAULT gen_random_uuid(),
     client_id     varchar(150) NOT NULL,
-    client_secret varchar(400) NOT NULL,
+    client_secret varchar(400),
     redirect_uri  varchar(200) NOT NULL,
     scope_id      uuid REFERENCES roles(id)
+);
+
+INSERT INTO clients (client_id, client_secret, redirect_uri, scope_id)
+VALUES (
+    'angular-client',
+    '', -- vazio porque SPA não usa client_secret
+    'http://localhost:4200/index.html',
+    (SELECT id FROM roles WHERE name = 'USER')
 );
 
 CREATE TABLE users (

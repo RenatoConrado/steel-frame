@@ -1,4 +1,4 @@
-package io.github.renatoconrado.steel_frame.auth.internal;
+package io.github.renatoconrado.steel_frame.config.auth.client;
 
 import io.github.renatoconrado.steel_frame.clients.Client;
 import io.github.renatoconrado.steel_frame.clients.ClientService;
@@ -37,9 +37,12 @@ public class JpaRegisteredClientRepository implements RegisteredClientRepository
             .build();
     }
 
+    /**
+     * Not Implemented
+     * @param registeredClient the {@link RegisteredClient}
+     */
     @Override
     public void save(RegisteredClient registeredClient) {
-
     }
 
     @Override

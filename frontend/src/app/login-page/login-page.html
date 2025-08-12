@@ -1,0 +1,9 @@
+<div>
+  @if (hasValidAccessToken()) {
+    <h1>Você está logado!</h1>
+    <button (click)="logout()">Logout</button>
+  } @else {
+    <h1>Bem-vindo</h1>
+    <button (click)="login()">Login</button>
+  }
+</div>
